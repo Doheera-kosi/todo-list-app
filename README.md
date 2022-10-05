@@ -1,6 +1,6 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# Set up project with Webpack
+# To Do list: list structure
 
 > Description the project.
 
@@ -28,7 +28,7 @@
 
 ## Getting Started
 
-**A week 1 of module Two '2' Set up project with Webpack project.
+**A week 2 of module Two '2' Set up project with Webpack project.
 
 
 ## To get a local copy up and running follow these simple example steps.
