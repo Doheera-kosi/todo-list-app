@@ -16,6 +16,10 @@ header {
   padding: 0 0.8rem;
 }
 
+.fa-thumbtack {
+  margin-right: 1rem;
+}
+
 .todo-container {
   margin: auto;
   margin-top: 5rem;
@@ -53,6 +57,7 @@ input:focus {
 div.li-item {
   display: flex;
   padding: 0 0.8rem;
+  padding-right: 1.6rem;
   padding-top: 0.8rem;
   padding-bottom: 0.8rem;
 }
@@ -72,4 +77,27 @@ div.li-item {
   border-bottom-left-radius: 0.5rem;
   border-bottom-right-radius: 0.5rem;
   cursor: pointer;
+}
+
+.checkbox {
+  cursor: pointer;
+}
+
+.list {
+  height: 60vh;
+  overflow-y: auto;
+}
+
+.list::-webkit-scrollbar{
+  width: 10px;
+}
+
+.list::-webkit-scrollbar-track{
+  background: #f1f1f1;
+  border-radius: 25px;
+}
+
+.list::-webkit-scrollbar-thumb{
+  background: #1e3b30;
+  border-radius: 25px;
 }
