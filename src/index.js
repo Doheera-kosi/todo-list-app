@@ -28,6 +28,7 @@ function component() {
   const element = document.createElement('li');
   // Lodash, now imported by this script
   dSet.forEach((d, index) => {
+    // eslint-disable-next-line eqeqeq
     if (d.index == index) {
       element.innerHTML += `
       <div class='li-item'>
