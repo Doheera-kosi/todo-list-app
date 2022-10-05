@@ -22,6 +22,46 @@ const dSet = [
     completed: false,
     index: '3',
   },
+  {
+    desc: 'Attend Morning Session',
+    completed: false,
+    index: '4',
+  },
+  {
+    desc: 'Attend Morning Session',
+    completed: false,
+    index: '5',
+  },
+  {
+    desc: 'Attend Morning Session',
+    completed: false,
+    index: '6',
+  },
+  {
+    desc: 'Attend Morning Session',
+    completed: false,
+    index: '7',
+  },
+  {
+    desc: 'Attend Morning Session',
+    completed: false,
+    index: '8',
+  },
+  {
+    desc: 'Attend Morning Session',
+    completed: false,
+    index: '9',
+  },
+  {
+    desc: 'Attend Morning Session',
+    completed: false,
+    index: '10',
+  },
+  {
+    desc: 'Attend Morning Session',
+    completed: false,
+    index: '11',
+  },
 ];
 
 function component() {
@@ -33,7 +73,7 @@ function component() {
       element.innerHTML += `
       <div class='li-item'>
         <div>
-          <input type="checkbox">
+          <input type="checkbox" class="checkbox">
           <label for="text">${d.desc}</label>
         </div>
         <div><i class="fa fa-ellipsis-v" aria-hidden="true"></i></div>
