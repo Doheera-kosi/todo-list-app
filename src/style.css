@@ -79,6 +79,11 @@ div.li-item {
   cursor: pointer;
 }
 
+.clear:hover {
+  background: rgb(177, 187, 184);
+  color: black;
+}
+
 .checkbox {
   cursor: pointer;
 }
