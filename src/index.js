@@ -1,4 +1,4 @@
-import _, { forEach } from 'lodash';
+// import _, { forEach } from 'lodash';
 import './style.css';
 
 const dSet = [
@@ -21,15 +21,14 @@ const dSet = [
     desc: 'Attend Morning Session',
     completed: false,
     index: '3',
-  }
-]
+  },
+];
 
 function component() {
   const element = document.createElement('li');
   // Lodash, now imported by this script
   dSet.forEach((d, index) => {
-    if(d.index == index) {
-      
+    if (d.index == index) {
       element.innerHTML += `
       <div class='li-item'>
         <div>
@@ -41,7 +40,7 @@ function component() {
       <hr>
       `;
     }
-  })
+  });
   element.classList.add('item');
   return element;
 }
