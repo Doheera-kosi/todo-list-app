@@ -72,18 +72,27 @@ li {
 }
 
 .task-text {
+  font-weight: normal;
+  font-size: 1.4rem;
   width: 100%;
   outline: none;
   border: none;
 }
 
-
 .deleteBtn {
   display: flex;
   flex-direction: column;
-  align-content: center;
+  align-items: center;
   justify-content: center;
-  
+  border: none;
+  background: #fff;
+  cursor: pointer;
+  margin-right: 0.5rem;
+}
+
+.deleteBtn:hover {
+  color: red;
+  font-size: 1.6rem;
 }
 
 .clear {
