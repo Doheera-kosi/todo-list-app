@@ -1,88 +1,74 @@
 // import _, { forEach } from 'lodash';
 import './style.css';
+import * as stat from './modules/crud.js';
+import * as task from './modules/array.js';
 
-const dSet = [
-  {
-    desc: 'Wash dishes',
-    completed: false,
-    index: '0',
-  },
-  {
-    desc: 'Attend Evening service for church prayer meeting',
-    completed: false,
-    index: '1',
-  },
-  {
-    desc: 'Attend community development meeting',
-    completed: false,
-    index: '2',
-  },
-  {
-    desc: 'Attend Morning Session',
-    completed: false,
-    index: '3',
-  },
-  {
-    desc: 'Attend Morning Session',
-    completed: false,
-    index: '4',
-  },
-  {
-    desc: 'Attend Morning Session',
-    completed: false,
-    index: '5',
-  },
-  {
-    desc: 'Attend Morning Session',
-    completed: false,
-    index: '6',
-  },
-  {
-    desc: 'Attend Morning Session',
-    completed: false,
-    index: '7',
-  },
-  {
-    desc: 'Attend Morning Session',
-    completed: false,
-    index: '8',
-  },
-  {
-    desc: 'Attend Morning Session',
-    completed: false,
-    index: '9',
-  },
-  {
-    desc: 'Attend Morning Session',
-    completed: false,
-    index: '10',
-  },
-  {
-    desc: 'Attend Morning Session',
-    completed: false,
-    index: '11',
-  },
-];
+let list = [];
 
-function component() {
-  const element = document.createElement('li');
-  // Lodash, now imported by this script
-  dSet.forEach((d, index) => {
-    // eslint-disable-next-line eqeqeq
-    if (d.index == index) {
-      element.innerHTML += `
-      <div class='li-item'>
-        <div>
-          <input type="checkbox" class="checkbox">
-          <label for="text">${d.desc}</label>
-        </div>
-        <div><i class="fa fa-ellipsis-v" aria-hidden="true"></i></div>
-      </div>
-      <hr>
-      `;
+const listContainer = document.querySelector('ul');
+
+const addList = () => {
+  if (window.localStorage.getItem('localTasks')) {
+    const localTasks = window.localStorage.getItem('localTasks');
+    list = JSON.parse(localTasks);
+  }
+  document.querySelector('.list').innerHTML = '';
+  list.forEach((item) => {
+    const taskElement = document.createElement('li');
+    taskElement.classList.add('task');
+    if (item.isCompleted) {
+      taskElement.classList.add('completed');
+    }
+    const checkbox = document.createElement('input');
+    checkbox.type = 'checkbox';
+    checkbox.classList.add('task-check');
+    checkbox.addEventListener('click', () => {
+      stat.status(item, list);
+      addList();
+    });
+    checkbox.checked = item.isCompleted;
+    taskElement.appendChild(checkbox);
+    const taskText = document.createElement('input');
+    taskText.classList = 'task-text';
+    taskText.value = item.description;
+    taskText.addEventListener('change', () => {
+      if (taskText.value.length > 0) {
+        item.description = taskText.value;
+        stat.saveLocal(list);
+      }
+    });
+    taskElement.appendChild(taskText);
+    const dragIcon = document.createElement('button');
+    dragIcon.classList = 'far fa-trash-alt deleteBtn';
+    taskElement.appendChild(dragIcon);
+    taskElement.draggable = 'true';
+    document.querySelector('.list').appendChild(taskElement);
+  });
+};
+
+function removeItem(e) {
+  if (!e.target.classList.contains('deleteBtn')) {
+    return;
+  }
+  const btn = e.target;
+  list.forEach((task) => {
+    if (task.description === btn.parentElement.children[1].value) {
+      list.splice(list.indexOf(task), 1);
     }
   });
-  element.classList.add('item');
-  return element;
+  btn.closest('li').remove();
+  task.updateIndex(list);
+  stat.saveLocal(list);
 }
-document.querySelector('.list').appendChild(component());
+
+listContainer.addEventListener('click', removeItem);
+addList();
+document.querySelector('#task-form').addEventListener('submit', (event) => {
+  event.preventDefault();
+  task.add(list);
+  addList();
+});
+document.querySelector('.clear').addEventListener('click', () => {
+  task.removeDone(list);
+  addList();
+});

@@ -10,17 +10,21 @@
   <div class="todo-container">
     <header>
       <h1>Evans To Do List</h1>
-      <i class="fa fa-thumbtack" aria-hidden="true"></i>
+      <!-- <i class="fa fa-thumbtack" aria-hidden="true"></i> -->
+      <i class="fa fa-list" aria-hidden="true"></i>
     </header>
     <hr>
-    <input for="text" class="add-list" placeholder="Add to your list"></input>
-    <hr>
-    <ul class="list">
-      <!-- Items -->
-    </ul> 
-    <div class="clear">
+      <form action="post" id="task-form">
+        <input for="text" id="input-field" class="add-list" placeholder="Add to your list" required></input>
+        <button class="add-btn"><i class="fa fa-thumbtack" aria-hidden="true"></i></button>
+      </form>
+      <hr>
+        <ul class="list">
+          <!-- Items -->
+        </ul>
+    <button type="button" class="clear">
       Clear all completed
-    </div>
+    </button>
   </div>
 </body>
 </html>

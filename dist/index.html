@@ -1,11 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wbpack Exercise</title>
-<script defer src="main.js"></script></head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+  <title>To Do List</title>
+  <script defer src="/main.js"></script></head>
 <body>
-    <h1>Hello webpack!</h1>
+  <div class="todo-container">
+    <header>
+      <h1>Evans To Do List</h1>
+      <i class="fa fa-thumbtack" aria-hidden="true"></i>
+    </header>
+    <form action="post" id="task-form">
+      <hr>
+      <input for="text" id="input-field" class="add-list" placeholder="Add to your list" required></input>
+      <button>Submit</button>
+    </form>
+    <hr>
+    <ul class="list">
+      <!-- Items -->
+    </ul> 
+    <button type="button" class="clear">
+      Clear all completed
+    </button>
+  </div>
 </body>
 </html>

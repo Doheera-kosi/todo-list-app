@@ -16,6 +16,7 @@ header {
   padding: 0 0.8rem;
 }
 
+.fa-list,
 .fa-thumbtack {
   margin-right: 1rem;
 }
@@ -42,29 +43,47 @@ header {
   background: #fff;
   font-style: italic;
   margin: 0.8rem 0;
+  width: 100%;
 }
 
-.item {
+/* .item {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-}
+} */
 
 input:focus {
   outline: none;
 }
 
-div.li-item {
+li {
+  background: #000;
+}
+
+.task {
   display: flex;
   padding: 0 0.8rem;
   padding-right: 1.6rem;
   padding-top: 0.8rem;
   padding-bottom: 0.8rem;
+  background: #fff;
+  gap: 0.8rem;
+  border-bottom: 1px solid rgb(17, 17, 16);
 }
 
-.li-item {
+.task-text {
+  width: 100%;
+  outline: none;
+  border: none;
+}
+
+
+.deleteBtn {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  
 }
 
 .clear {
@@ -77,6 +96,7 @@ div.li-item {
   border-bottom-left-radius: 0.5rem;
   border-bottom-right-radius: 0.5rem;
   cursor: pointer;
+  border: none;
 }
 
 .clear:hover {
@@ -105,4 +125,20 @@ div.li-item {
 .list::-webkit-scrollbar-thumb{
   background: #1e3b30;
   border-radius: 25px;
+}
+
+#task-form {
+  display: flex;
+  flex-direction: row;
+  margin-right: 1rem;
+}
+
+.add-btn {
+  background: white;
+  border: none;
+  cursor: pointer;
+}
+
+.completed {
+  text-decoration: line-through;
 }
