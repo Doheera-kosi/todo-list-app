@@ -11,8 +11,6 @@
 - Frameworks
 - Technologies used![](https://img.shields.io/badge/Microverse-blueviolet)
 
-> Awesome Books
-  In this project the featured section is implemented dynamically with Javascript.
 
 ## Screenshot of project
 
@@ -28,14 +26,11 @@
 
 ## Getting Started
 
-**A week 2 of module Two '2' Set up project with Webpack project.
-
-
 ## To get a local copy up and running follow these simple example steps.
 
 ### Prerequisites
 
-* A basic knowledge of html, and javascript
+* A basic knowledge of html, css, and javascript
 
 ### Setup
 
