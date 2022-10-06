@@ -122,16 +122,16 @@ li {
   overflow-y: auto;
 }
 
-.list::-webkit-scrollbar{
+.list::-webkit-scrollbar {
   width: 10px;
 }
 
-.list::-webkit-scrollbar-track{
+.list::-webkit-scrollbar-track {
   background: #f1f1f1;
   border-radius: 25px;
 }
 
-.list::-webkit-scrollbar-thumb{
+.list::-webkit-scrollbar-thumb {
   background: #1e3b30;
   border-radius: 25px;
 }
