@@ -1,8 +1,6 @@
-// import _, { forEach } from 'lodash';
-// import * as stat from './modules/crud.js';
 import './style.css';
 import * as task from './modules/crud.js';
-// let list = [];
+
 const listContainer = document.querySelector('ul');
 
 let list = [
@@ -45,8 +43,6 @@ const addList = () => {
     taskElement.appendChild(taskText);
     const dragIcon = document.createElement('button');
     dragIcon.classList = 'far fa-trash-alt deleteBtn';
-    // const dragIcon = document.createElement('i');
-    // dragIcon.classList = 'fas fa-ellipsis-v drag icon';
     taskElement.appendChild(dragIcon);
     taskElement.draggable = 'true';
     document.querySelector('.list').appendChild(taskElement);
