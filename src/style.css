@@ -92,7 +92,8 @@ li {
 
 .deleteBtn:hover {
   color: red;
-  font-size: 1.6rem;
+  font-size: 1.3rem;
+  text-decoration: none;
 }
 
 .clear {
