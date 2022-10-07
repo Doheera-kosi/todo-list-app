@@ -5,22 +5,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
   <title>To Do List</title>
-  <script defer src="/main.js"></script></head>
+  <script
+  src="https://kit.fontawesome.com/9c25278351.js" crossorigin="anonymous"></script>
+<script defer src="/main.js"></script></head>
 <body>
   <div class="todo-container">
     <header>
       <h1>Evans To Do List</h1>
-      <i class="fa fa-thumbtack" aria-hidden="true"></i>
+      <!-- <i class="fa fa-thumbtack" aria-hidden="true"></i> -->
+      <i class="fa fa-list" aria-hidden="true"></i>
     </header>
-    <form action="post" id="task-form">
-      <hr>
-      <input for="text" id="input-field" class="add-list" placeholder="Add to your list" required></input>
-      <button>Submit</button>
-    </form>
     <hr>
-    <ul class="list">
-      <!-- Items -->
-    </ul> 
+      <form action="post" id="task-form">
+        <input for="text" id="input-field" class="add-list" placeholder="Add to your list" required></input>
+        <button class="add-btn"><i class="fa fa-thumbtack" aria-hidden="true"></i></button>
+      </form>
+      <hr>
+        <ul class="list">
+          <!-- Items -->
+        </ul>
     <button type="button" class="clear">
       Clear all completed
     </button>
