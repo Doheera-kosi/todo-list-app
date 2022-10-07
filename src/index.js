@@ -1,11 +1,16 @@
 // import _, { forEach } from 'lodash';
+// import * as stat from './modules/crud.js';
 import './style.css';
-import * as stat from './modules/crud.js';
-import * as task from './modules/array.js';
-
-let list = [];
-
+import * as task from './modules/crud.js';
+// let list = [];
 const listContainer = document.querySelector('ul');
+
+let list = [
+  { description: 'Set up a new project with webpack', isCompleted: false, index: 0 },
+  { description: 'Set up a', isCompleted: false, index: 1 },
+  { description: 'Create an index.js file', isCompleted: false, index: 2 },
+  { description: 'Write a function to iterate over the tasks array and populate an HTML', isCompleted: false, index: 3 },
+];
 
 const addList = () => {
   if (window.localStorage.getItem('localTasks')) {
@@ -23,7 +28,7 @@ const addList = () => {
     checkbox.type = 'checkbox';
     checkbox.classList.add('task-check');
     checkbox.addEventListener('click', () => {
-      stat.status(item, list);
+      task.status(item, list);
       addList();
     });
     checkbox.checked = item.isCompleted;
@@ -34,12 +39,14 @@ const addList = () => {
     taskText.addEventListener('change', () => {
       if (taskText.value.length > 0) {
         item.description = taskText.value;
-        stat.saveLocal(list);
+        task.saveLocal(list);
       }
     });
     taskElement.appendChild(taskText);
     const dragIcon = document.createElement('button');
     dragIcon.classList = 'far fa-trash-alt deleteBtn';
+    // const dragIcon = document.createElement('i');
+    // dragIcon.classList = 'fas fa-ellipsis-v drag icon';
     taskElement.appendChild(dragIcon);
     taskElement.draggable = 'true';
     document.querySelector('.list').appendChild(taskElement);
@@ -58,7 +65,7 @@ function removeItem(e) {
   });
   btn.closest('li').remove();
   task.updateIndex(list);
-  stat.saveLocal(list);
+  task.saveLocal(list);
 }
 
 listContainer.addEventListener('click', removeItem);
