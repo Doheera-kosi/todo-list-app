@@ -1,6 +1,6 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# To Do list: add & remove
+# To Do list: interactive list
 
 > Description the project.
 
