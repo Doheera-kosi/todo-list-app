@@ -5,14 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
   <title>To Do List</title>
-  <script
-  src="https://kit.fontawesome.com/9c25278351.js" crossorigin="anonymous"></script>
+  <script src="https://kit.fontawesome.com/9c25278351.js" crossorigin="anonymous"></script>
 <script defer src="/main.js"></script></head>
 <body>
   <div class="todo-container">
     <header>
       <h1>Evans To Do List</h1>
-      <!-- <i class="fa fa-thumbtack" aria-hidden="true"></i> -->
       <i class="fa fa-list" aria-hidden="true"></i>
     </header>
     <hr>
@@ -21,12 +19,14 @@
         <button class="add-btn"><i class="fa fa-thumbtack" aria-hidden="true"></i></button>
       </form>
       <hr>
-        <ul class="list">
+        <ul class="list" aria-placeholder="You have not task yet">
           <!-- Items -->
         </ul>
     <button type="button" class="clear">
       Clear all completed
     </button>
   </div>
+
+  <script src="./main.js"></script>
 </body>
 </html>
